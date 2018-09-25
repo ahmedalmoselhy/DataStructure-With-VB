@@ -7,11 +7,12 @@
         num1 = InputBox("Enter The First Number As Shown 'Real + jImaginary'")
 
         GetReAndImg(num1, re1, img1)
+        Console.WriteLine(re1 & "    " & img1)
 
         num2 = InputBox("Enter The Second Number As Shown 'Real + jImaginary'")
 
         GetReAndImg(num2, re2, img2)
-
+        Console.WriteLine(re2 & "    " & img2)
         'now define the desired operation using inputbox
 
         Dim oper As Char
@@ -55,10 +56,10 @@
         Dim reTotal = real1 + real2
         Dim imgTotal = imagin1 + imagin2
 
-        If imgTotal < 1 Then
-            sum = reTotal.ToString + "-j" + (imgTotal * -1).ToString
+        If imgTotal < 0 Then
+            sum = reTotal.ToString + "-j" + (imgTotal * -1).ToString + ""
         Else
-            sum = reTotal.ToString + "+j" + imgTotal.ToString
+            sum = reTotal.ToString + "+j" + imgTotal.ToString + ""
         End If
 
         Return sum
@@ -69,7 +70,7 @@
         Dim reSubt = real1 - real2
         Dim imgSubt = imagin1 - imagin2
 
-        If imgSubt < 1 Then
+        If imgSubt < 0 Then
             res = reSubt.ToString + "-j" + (imgSubt * -1).ToString
         Else
             res = reSubt.ToString + "+j" + imgSubt.ToString
