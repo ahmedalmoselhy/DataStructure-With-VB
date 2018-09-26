@@ -39,12 +39,13 @@
 
     Function GetReAndImg(ByVal num, ByRef real, ByRef imagin)
         'used to get the real and imaginary values for each number entered!
-        If num.Contains("+") Then
-            real = Val(num.Split("+j")(0))
-            imagin = Val(num.Split("+j")(1))
+
+        If num.Contains("+j") Then
+            real = Val(num.Split("j")(0))
+            imagin = Val(num.Split("j")(1))
         Else
-            real = Val(num.Split("-j")(0))
-            imagin = Val(num.Split("-j")(1) * -1)
+            real = Val(num.Split("j")(0))
+            imagin = Val(num.Split("j")(1)) * -1
         End If
 
 
@@ -81,13 +82,45 @@
 
     Function multi(ByVal real1, ByVal real2, ByVal imagin1, ByVal imagin2)
         Dim mul As String
+        Dim reMulti As Integer
+        Dim imgMulti As Integer
 
+        reMulti = (real1 * real2) + (-1 * (imagin1 * imagin2))
+        imgMulti = (real1 * imagin2) + (real2 * imagin1)
+
+        If imgMulti < 0 Then
+            mul = reMulti.ToString + "-j" + (imgMulti * -1).ToString
+        Else
+            mul = reMulti.ToString + "+j" + imgMulti.ToString
+        End If
 
         Return mul
     End Function
 
     Function devide(ByVal real1, ByVal real2, ByVal imagin1, ByVal imagin2)
         Dim dev As String
+        Dim Base As Single
+
+
+        Base = (real1 * real2) + (imagin1 * imagin2 * -1)
+
+        Dim devRes As Single
+        devRes = multi(real1, real2, imagin1, imagin2)
+
+        Dim re, img As Single
+
+        GetReAndImg(devRes, re, img)
+
+        Dim real, imagin As Single
+
+        real = re / Base
+        imagin = img / Base
+
+        If imagin < 0 Then
+            dev = real.ToString + "-j" + (imagin * -1).ToString
+        Else
+            dev = real.ToString + "+j" + imagin.ToString
+        End If
 
 
         Return dev
