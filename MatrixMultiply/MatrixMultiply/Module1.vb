@@ -5,9 +5,9 @@
         Dim n As Integer = InputBox("Enter N")
         Dim v As Integer = InputBox("Enter V")
 
-        Dim A(m, n) As Single
-        Dim B(n, v) As Single
-        Dim C(m, v) As Single
+        Dim A(m - 1, n - 1) As Single
+        Dim B(n - 1, v - 1) As Single
+        Dim C(m - 1, v - 1) As Single
 
 
 
