@@ -32,5 +32,21 @@
             Next
             Console.WriteLine()
         End Sub
+
+        Public Sub BubbleSort()
+            Dim outer, inner, temp As Integer
+
+            For outer = numElements - 1 To 1 Step -1
+                For inner = 0 To outer - 1
+                    If arr(inner) > arr(inner + 1) Then
+                        temp = arr(inner)
+                        arr(inner) = arr(inner + 1)
+                        arr(inner + 1) = temp
+                    End If
+                Next
+                Me.showArray()
+            Next
+        End Sub
+
     End Class
 End Module
