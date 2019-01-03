@@ -6,6 +6,9 @@
         For index = 0 To 49
             theArray.insert(Int(100 * Rnd()) + 1)
         Next
+        theArray.BubbleSort()
+        Console.WriteLine(theArray.binarySearch(40))
+        Console.Read()
     End Sub
     Class CArray
         Private arr() As Integer
