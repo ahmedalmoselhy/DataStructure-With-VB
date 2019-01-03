@@ -1,7 +1,11 @@
 ﻿Module Module1
 
     Sub Main()
-
+        Dim theArray As New CArray(9)
+        Dim index As Integer
+        For index = 0 To 49
+            theArray.insert(Int(100 * Rnd()) + 1)
+        Next
     End Sub
     Class CArray
         Private arr() As Integer
