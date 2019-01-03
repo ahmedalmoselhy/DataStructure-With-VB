@@ -63,5 +63,23 @@
                 Me.showArray()
             Next
         End Sub
+
+        Public Function binarySearch(ByVal value As Integer)
+            Dim upperBound, lowerBound, mid As Integer
+            ' set the bounds of the array
+            upperBound = arr.GetUpperBound(0)
+            lowerBound = 0
+            Do While (lowerBound <= upperBound)
+                mid = (lowerBound + upperBound) / 2
+                If arr(mid) = value Then
+                    Return mid
+                ElseIf value < arr(mid) Then
+                    upperBound = mid - 1
+                Else
+                    lowerBound = mid + 1
+                End If
+            Loop
+            Return -1
+        End Function
     End Class
 End Module
