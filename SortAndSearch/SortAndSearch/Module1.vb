@@ -48,5 +48,20 @@
             Next
         End Sub
 
+        Public Sub selectioSort()
+            Dim outer, inner, temp, min As Integer
+            For outer = 0 To numElements - 2
+                min = outer
+                For inner = outer + 1 To numElements - 1
+                    If arr(inner) < arr(min) Then
+                        min = inner
+                    End If
+                Next
+                temp = arr(outer)
+                arr(outer) = arr(min)
+                arr(min) = temp
+                Me.showArray()
+            Next
+        End Sub
     End Class
 End Module
