@@ -48,7 +48,23 @@
         End Function
     End Class
     Sub Main()
+        Dim stack As New myStack()
+        Dim input As String = InputBox("Enter a sentence to reverse")
+        ' push each character in the sentence into the stack
+        For i = 0 To input.Length - 1
+            stack.push(input.Chars(i))
+        Next
 
+        Dim numElements As Integer = stack.count()
+        Dim reverse As String = ""
+        ' pop reversed sentence characters from the stack
+        For i = 0 To numElements - 1
+            reverse &= stack.pop()
+        Next
+
+        Console.WriteLine("The Reversed Sentence is : ")
+        Console.WriteLine(reverse)
+        Console.Read()
     End Sub
 
 End Module
