@@ -64,6 +64,29 @@
 
         Console.WriteLine("The Reversed Sentence is : ")
         Console.WriteLine(reverse)
+
+
+        ' check if the input word is palindrome
+        Dim word As String = InputBox("Enter a word :")
+        Dim x As Integer
+        Dim isPalindrome As Boolean = True
+        For x = 0 To word.Length - 1
+            stack.push(word.Chars(x))
+        Next
+
+        ' pop the characters from the stack and compare it with the word
+        For x = 0 To (word.Length - 1) / 2
+            If stack.pop <> word.Chars(x) Then
+                isPalindrome = False
+                Exit For
+            End If
+        Next
+
+        If isPalindrome Then
+            Console.WriteLine("The Word " & word & " is palindrome")
+        Else
+            Console.WriteLine("The Word " & word & " is not palindrome")
+        End If
         Console.Read()
     End Sub
 
