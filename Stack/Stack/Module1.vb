@@ -64,7 +64,7 @@
 
         Console.WriteLine("The Reversed Sentence is : ")
         Console.WriteLine(reverse)
-
+        stack.clear()
 
         ' check if the input word is palindrome
         Dim word As String = InputBox("Enter a word :")
@@ -86,6 +86,34 @@
             Console.WriteLine("The Word " & word & " is palindrome")
         Else
             Console.WriteLine("The Word " & word & " is not palindrome")
+        End If
+
+        stack.clear()
+        ' check if a mathemtaical sentence is correct using stack
+        Dim sentence As String = InputBox("Enter the mathematical sentence:")
+        For i = 0 To sentence.Length - 1
+            Dim ch As Char = sentence.Chars(i)
+
+            Select Case ch
+                Case "{", "[", "("
+                    stack.push(ch)
+                Case "}", "]", ")"
+                    If stack.isEmpty() Then
+                        GoTo wrong
+                    Else
+                        Dim chx As Char = stack.pop()
+                        If (ch = "}" And chx <> "{") Or (ch = ")" And chx <> "(") Or (ch = "]" And chx <> "[") Then
+                            GoTo wrong
+                        End If
+                    End If
+            End Select
+        Next
+
+        If stack.isEmpty() Then
+            Console.WriteLine("Sentence is correct")
+        Else
+wrong:
+            Console.WriteLine("Sentence is wrong")
         End If
         Console.Read()
     End Sub
