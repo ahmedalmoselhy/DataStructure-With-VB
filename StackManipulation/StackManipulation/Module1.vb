@@ -47,6 +47,17 @@
             Return False
         End Function
     End Class
+
+    Public Function inputItems(ByVal no As Integer)
+        Dim stk As New myStack()
+        Dim element As Integer
+        For i = 0 To no - 1
+            element = InputBox("Enter element " & i + 1 & " to be pushed:")
+            stk.push(element)
+        Next
+        Return stk
+    End Function
+
     Sub Main()
 
     End Sub
