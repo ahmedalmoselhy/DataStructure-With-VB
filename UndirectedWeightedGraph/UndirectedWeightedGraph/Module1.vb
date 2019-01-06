@@ -36,6 +36,15 @@
             numVerts += 1
         End Sub
 
+        Public Sub addEgde(ByVal start As Integer, ByVal eend As Integer, ByVal weight As Integer)
+            adjMatrix(start, eend) = weight
+            adjMatrix(eend, start) = weight
+        End Sub
+
+        Public Sub showVertex(ByVal v As Integer)
+            Console.Write(vertices(v).label)
+        End Sub
+
 
     End Class
     Sub Main()
