@@ -67,6 +67,34 @@
         End Function
     End Class
     Sub Main()
+        Dim aGraph As New MyGraph()
+
+        aGraph.addVertex("A")
+        aGraph.addVertex("B")
+        aGraph.addVertex("C")
+        aGraph.addVertex("D")
+        aGraph.addVertex("E")
+        aGraph.addVertex("F")
+        aGraph.addVertex("G")
+        aGraph.addVertex("H")
+
+        aGraph.addEgde(0, 1, 5)
+        aGraph.addEgde(0, 5, 5)
+        aGraph.addEgde(1, 2, 5)
+        aGraph.addEgde(1, 3, 4)
+        aGraph.addEgde(1, 4, 4)
+        aGraph.addEgde(2, 4, 3)
+        aGraph.addEgde(2, 7, 4)
+        aGraph.addEgde(3, 4, 4)
+        aGraph.addEgde(3, 5, 4)
+        aGraph.addEgde(3, 6, 4)
+        aGraph.addEgde(4, 6, 5)
+        aGraph.addEgde(4, 7, 5)
+        aGraph.addEgde(5, 6, 5)
+        aGraph.addEgde(6, 7, 5)
+
+        Console.WriteLine(aGraph.getDescription())
+        Console.Read()
 
     End Sub
 
