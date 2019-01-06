@@ -14,8 +14,23 @@
         Private numVerts As Integer
 
         Public Sub New()
+            ReDim vertices(NUM_VERTICES - 1)
+            ReDim adjMatrix(NUM_VERTICES - 1, NUM_VERTICES - 1)
+            numVerts = 0
 
+            Dim j, k As Integer
+
+            For j = 0 To adjMatrix.GetUpperBound(0)
+                For k = 0 To adjMatrix.GetUpperBound(1)
+                    If j = k Then
+                        adjMatrix(j, k) = 0
+                    Else
+                        adjMatrix(j, k) = -1
+                    End If
+                Next
+            Next
         End Sub
+
     End Class
     Sub Main()
 
