@@ -31,6 +31,12 @@
             Next
         End Sub
 
+        Public Sub addVertex(ByVal label As String)
+            vertices(numVerts) = New MyVertex(label)
+            numVerts += 1
+        End Sub
+
+
     End Class
     Sub Main()
 
