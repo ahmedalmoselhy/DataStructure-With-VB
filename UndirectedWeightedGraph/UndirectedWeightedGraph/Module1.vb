@@ -45,7 +45,26 @@
             Console.Write(vertices(v).label)
         End Sub
 
+        ' Describe the Graph:
+        ' The function that return with the graph as string in suitable format
+        Public Function getDescription() As String
+            Dim str As String = "Vertices:" + vbCrLf
+            ' Write all IDs of all vertices each in a separate line
+            For i = 0 To numVerts - 1
+                str &= vertices(i).label + vbCrLf
+            Next
+            str &= vbCrLf & "Edges:" & vbCrLf
 
+            ' Write the description of each edge as a connection between two vertices each displayed as a vertex ID
+            For i = 0 To numVerts - 1
+                For j = 0 To i
+                    If adjMatrix(i, j) > 0 Then
+                        str &= vertices(i).label & " <- " & adjMatrix(i, j) & " -> " & vertices(j).label & vbCrLf
+                    End If
+                Next
+            Next
+            Return str
+        End Function
     End Class
     Sub Main()
 
