@@ -58,6 +58,31 @@
         Return stk
     End Function
 
+    Public Sub printItems(ByVal stk As myStack)
+        Dim i As Integer = 0
+        While Not stk.isEmpty()
+            Console.WriteLine("Top of Stack No." & (i + 1) & " = " & stk.pop())
+            i += 1
+        End While
+    End Sub
+
+    Public Function reverse(ByVal stk As myStack)
+        Dim stk1 As New myStack()
+        For i = 0 To stk.count - 1
+            stk1.push(stk.pop())
+        Next
+        Return stk1
+    End Function
+
+    Public Function getLargest(ByVal stk As myStack)
+        Dim element, max As Integer
+        max = stk.pop()
+        While Not stk.isEmpty()
+            element = stk.pop()
+            If element > max Then max = element
+        End While
+        Return max
+    End Function
     Sub Main()
 
     End Sub
