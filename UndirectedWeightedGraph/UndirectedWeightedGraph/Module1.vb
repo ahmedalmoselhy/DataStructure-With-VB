@@ -7,6 +7,16 @@
             wasVisited = False
         End Sub
     End Class
+    Class MyGraph
+        Private Const NUM_VERTICES As Integer = 20
+        Private vertices() As MyVertex
+        Private adjMatrix(,) As Integer
+        Private numVerts As Integer
+
+        Public Sub New()
+
+        End Sub
+    End Class
     Sub Main()
 
     End Sub
